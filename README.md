@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Modular RAG Chatbot
 
@@ -347,3 +348,7 @@ The application includes:
 **AI / Generative AI Engineer**
 
 GitHub: https://github.com/Sahil799717
+=======
+# Modular-Rag-Chatbot
+Production-oriented multi-user RAG chatbot using FastAPI, Streamlit, Qdrant, Redis and LangChain.
+>>>>>>> ae478e22d669d6a72b7153eed9b6d5003d37cf7d
