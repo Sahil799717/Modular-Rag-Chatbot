@@ -1,0 +1,41 @@
+
+# Backend
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Frontend
+streamlit
+
+# LangChain
+langchain
+langchain-community
+langchain-text-splitters
+langchain-ollama
+langchain-qdrant
+
+# PDF processing
+pypdf
+
+# Vector database
+qdrant-client
+
+# Configuration
+pydantic-settings
+python-dotenv
+
+# Testing
+pytest
+httpx
+langchain-ollama
+langchain-qdrant
+qdrant-client
+langchain-openai
+google-genai
+langchain-classic
+flashrank
+langchain-community
+redis
+python-multipart
+PyJWT
+requests
