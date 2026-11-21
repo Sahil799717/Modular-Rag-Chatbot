@@ -1,0 +1,41 @@
+
+name: RAG Chatbot CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_NAME: Modular RAG Chatbot
+      OLLAMA_BASE_URL: http://localhost:11434
+      EMBEDDING_MODEL: embeddinggemma
+      QDRANT_URL: http://localhost:6333
+      QDRANT_COLLECTION: rag-documents
+      BIFROST_BASE_URL: http://localhost:8080/v1
+      BIFROST_VIRTUAL_KEY: ci-placeholder
+      REDIS_URL: redis://localhost:6379/0
+      JWT_SECRET_KEY: ci-test-secret-key
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: pytest tests/unit -v
